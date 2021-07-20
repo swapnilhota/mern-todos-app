@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import todosRoutes from './routes/todos.js';
 
 const app = express();
 dotenv.config();
@@ -9,6 +10,7 @@ dotenv.config();
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use('/todos', todosRoutes);
 
 const mongodb = "mongodb+srv://first-user:mongodb@cluster0.t01a9.mongodb.net/mern-todo-app?retryWrites=true&w=majority";
 

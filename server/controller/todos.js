@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Todo from '../models/todos';
+import Todo from '../models/todos.js';
 
 export const readTodos = async (req, res) => {
     try {
