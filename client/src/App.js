@@ -1,3 +1,4 @@
+import Preloader from './components/Preloader.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             </div>
           </div>
         </form>
+        <Preloader />
       </div>
     </div>
   );
