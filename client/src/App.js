@@ -1,6 +1,17 @@
+import { useEffect } from 'react';
+import { readTodos } from './functions';
 import Preloader from './components/Preloader.js';
 
 function App() {
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await readTodos();
+      console.log(result);
+    }
+    fetchData();
+  }, [])
+
   return (
     <div className="container">
       <div className="row">
