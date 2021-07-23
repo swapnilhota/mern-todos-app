@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect(mongodb, { useUnifiedTopology: true }, { useNewUrlParser: true })
+mongoose.connect(mongodb, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => {
         console.log(`server is running on port ${PORT}`);
     })

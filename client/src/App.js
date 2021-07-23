@@ -5,6 +5,7 @@ import Preloader from './components/Preloader.js';
 function App() {
 
   const [todo, setTodo] = useState({ title: '', content: '' });
+  const [todos, setTodos] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +42,9 @@ function App() {
             <button className="waves-effect waves-light btn">Submit</button>
           </div>
         </form>
-        <Preloader />
+        {
+          !todos ? <Preloader /> : <div>Loading Finished</div>
+        }
         <div className="collection">
           <a href="#!" className="collection-item">Alvin</a>
           <a href="#!" className="collection-item active">Alvin</a>
