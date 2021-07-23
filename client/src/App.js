@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await readTodos();
-      console.log(result);
+      setTodos(result);
     }
     fetchData();
   }, [])
