@@ -61,8 +61,6 @@ function App() {
             </ul>
             : <div><h5>Nothing To Do</h5></div>
         }
-
-
       </div>
     </div>
   );

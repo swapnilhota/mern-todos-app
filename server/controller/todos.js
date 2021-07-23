@@ -19,3 +19,7 @@ export const createTodos = async (req, res) => {
         res.status(409).json({ error: error.message });
     }
 }
+
+export const deleteTodo = async (req, res) => {
+    const { id } = req.params;
+}
