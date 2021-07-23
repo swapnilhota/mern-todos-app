@@ -49,8 +49,10 @@ function App() {
                 todos.map(todo => (
                   <li key={todo._id} className="collection-item">
                     <div><h5>{todo.title}</h5>
-                      <p>{todo.content}</p>
-                      <a href="#!" className="secondary-content"><i className="material-icons">delete</i></a>
+                      <p>
+                        {todo.content}
+                        <a href="#!" className="secondary-content"><i className="material-icons">delete</i></a>
+                      </p>
                     </div>
                   </li>
 
