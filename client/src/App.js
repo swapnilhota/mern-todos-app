@@ -43,14 +43,16 @@ function App() {
           </div>
         </form>
         {
-          !todos ? <Preloader /> : <div>Loading Finished</div>
+          !todos ? <Preloader /> : todos.length > 0 ?
+            <div className="collection">
+              <a href="#!" className="collection-item">Alvin</a>
+              <a href="#!" className="collection-item active">Alvin</a>
+              <a href="#!" className="collection-item">Alvin</a>
+              <a href="#!" className="collection-item">Alvin</a>
+            </div>
+            : <div><h5>Nothing To Do</h5></div>
         }
-        <div className="collection">
-          <a href="#!" className="collection-item">Alvin</a>
-          <a href="#!" className="collection-item active">Alvin</a>
-          <a href="#!" className="collection-item">Alvin</a>
-          <a href="#!" className="collection-item">Alvin</a>
-        </div>
+
 
       </div>
     </div>
