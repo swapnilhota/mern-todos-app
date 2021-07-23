@@ -44,12 +44,19 @@ function App() {
         </form>
         {
           !todos ? <Preloader /> : todos.length > 0 ?
-            <div className="collection">
-              <a href="#!" className="collection-item">Alvin</a>
-              <a href="#!" className="collection-item active">Alvin</a>
-              <a href="#!" className="collection-item">Alvin</a>
-              <a href="#!" className="collection-item">Alvin</a>
-            </div>
+            <ul className="collection">
+              {
+                todos.map(todo => (
+                  <li key={todo._id} className="collection-item">
+                    <div><h5>{todo.title}</h5>
+                      <p>{todo.content}</p>
+                      <a href="#!" className="secondary-content"><i className="material-icons">delete</i></a>
+                    </div>
+                  </li>
+
+                ))
+              }
+            </ul>
             : <div><h5>Nothing To Do</h5></div>
         }
 
