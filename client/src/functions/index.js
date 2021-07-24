@@ -17,3 +17,11 @@ export const createTodo = async (todo) => {
         console.log(error);
     }
 }
+
+export const deleteTodo = async (id) => {
+    try {
+        await api.deleteTodo(id);
+    } catch (error) {
+        console.log(error);
+    }
+}
