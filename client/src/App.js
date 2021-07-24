@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { createTodo, readTodos } from './functions';
+import { createTodo, readTodos, deleteTodo } from './functions';
 import Preloader from './components/Preloader.js';
 
 function App() {
@@ -13,13 +13,19 @@ function App() {
       setTodos(result);
     }
     fetchData();
-  }, [])
+  })
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
     const result = await createTodo(todo);
     console.log(result);
+  }
+
+  const removeTodo = async (id) => {
+    await deleteTodo(id);
+    const result = await readTodos();
+    setTodos(result);
   }
 
   return (
@@ -51,7 +57,7 @@ function App() {
                     <div><h5>{todo.title}</h5>
                       <p>
                         {todo.content}
-                        <a href="#!" className="secondary-content"><i className="material-icons">delete</i></a>
+                        <a href="/" className="secondary-content" onClick={() => removeTodo(todo._id)} ><i className="material-icons">delete</i></a>
                       </p>
                     </div>
                   </li>
