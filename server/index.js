@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/todos', todosRoutes);
 
-const mongodb = "mongodb+srv://first-user:mongodb@cluster0.t01a9.mongodb.net/mern-todo-app?retryWrites=true&w=majority";
+const mongodb = "mongodb+srv://first-user:<PASSWORD>@cluster0.t01a9.mongodb.net/<DATABASE_NAME>?retryWrites=true&w=majority";
 
 app.get('/', (req, res) => {
     res.send("Welcome to the Server");
